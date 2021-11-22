@@ -82,6 +82,7 @@ void StartUdpServerTask(void const * argument)
 	for(;;)
 	{
 		 bzero(&client_addr, sizeof(client_addr));
+		 bzero(buffer,sizeof(buffer));
 		 addr_len = sizeof(client_addr);
 		 if((nbytes = recvfrom(socket_fd,buffer,sizeof(buffer),0,(struct sockaddr *)&client_addr,(socklen_t *)&addr_len))>0)
 		 {
